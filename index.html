@@ -8,31 +8,41 @@
 <body>
 
 <script>
-    function calculateTotalCost(length, width, m2Price) {
-        if (length <= 0 || width <= 0) {
-            throw new Error("Kambario matmenys turi būti teigiami skaičiai.");
-        }
-        if (m2Price < 0) {
-            throw new Error("Kaina negali būti neigiama.");
-        }
-
-        const area = length * width;
-        const areaWithExtra = area * 1.05;
-        const totalCost = areaWithExtra * m2Price;
-
-        return Math.round(totalCost * 100) / 100;
+    function calculateTimeSinceMidnight(x, y) {
+    // --- Input validation ---
+    if (x < 0 || x > 23) {
+        throw new Error("Valandos turi būti nuo 0 iki 23.");
+    }
+    if (y < 0 || y > 59) {
+        throw new Error("Minutės turi būti nuo 0 iki 59.");
     }
 
-    try {
-        const length = parseInt(prompt("Įvesk kambario ilgį (m):"));
-        const width = parseInt(prompt("Įvesk kambario plotį (m):"));
-        const m2Price = parseFloat(prompt("Įvesk kainą už 1 m²:"));
+    // --- Calculate minutes since midnight ---
+    const minutes = x * 60 + y;
 
-        const total = calculateTotalCost(length, width, m2Price);
-        alert("Bendra kaina su 5% ekstra: " + total + " eurai");
-    } catch (error) {
-        alert("Klaida: " + error.message);
-    }
+    // --- Calculate seconds since midnight ---
+    const seconds = minutes * 60;
+
+    return { minutes, seconds };
+}
+
+
+// --- Example usage (with prompts) ---
+try {
+    const x = parseInt(prompt("Įvesk valandas (0–23):"));
+    const y = parseInt(prompt("Įvesk minutes (0–59):"));
+
+    const result = calculateTimeSinceMidnight(x, y);
+
+    alert(
+        "Minutes passed: " + result.minutes +
+        "\nSeconds passed: " + result.seconds
+    );
+
+} catch (error) {
+    alert("Klaida: " + error.message);
+}
+
 </script>
 
 </body>
