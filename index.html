@@ -2,33 +2,14 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
-  <title>Santa’s Number-Trimming Magic</title>
+  <title>Gift Bag</title>
   <link rel="stylesheet" href="style.css">
-  <!--Trecia uzduotis-->
+  <script src="script.js"></script>
+  <!--Ketvirta uzduotis-->
 </head>
 <body>
-
-  <div class="container">
-    <h2>Santa's<br>Number Trimming<br>Magic 🎅</h2>
-
-    <input id="numberInput" type="number" placeholder="Įvesk 4-skaitmenį skaičių">
-    <button onclick="trimNumber()">Vykdyti</button>
+  <h2>Santa's Magical Gift Bag</h2>
+    <button onclick="startGiftBag()">Pradėti įvedimą</button>
     <p id="result"></p>
-  </div>
-
-  <script>
-    function trimNumber() {
-      let num = document.getElementById("numberInput").value;
-
-      if (num.length !== 4) {
-        document.getElementById("result").innerText = "Įvesk TIKSLIAI 4 skaitmenis!";
-        return;
-      }
-
-      let newNumber = num[0] + num[3];
-      document.getElementById("result").innerText = "Naujas skaičius: " + newNumber;
-    }
-  </script>
-
 </body>
 </html>
