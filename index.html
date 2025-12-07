@@ -3,50 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa’s Flight Schedule</title>
-    <!--Sesta uzduotis-->
+    <title>Santa’s Concert Seating</title>
+    <!--Septinta uzduotis-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>Santa’s Sleigh Flight Schedule</h1>
+    <h1>Santa’s Concert Seating Plan</h1>
 
-    <label>Takeoff Hour (a):</label>
-    <input type="number" id="hour" min="0" max="23" placeholder="0–23">
+    <label>Total Rows (n):</label>
+    <input type="number" id="rows" min="1" placeholder="number of rows">
 
-    <label>Takeoff Minute (b):</label>
-    <input type="number" id="minute" min="0" max="59" placeholder="0–59">
+    <label>Seats in First Row (k):</label>
+    <input type="number" id="first" min="1" placeholder="seats in row 1">
 
-    <label>Flight Duration (c) minutes:</label>
-    <input type="number" id="duration" min="0" placeholder="minutes">
-
-    <button onclick="calculateLanding()">Calculate Landing Time</button>
+    <button onclick="calculateSeats()">Calculate Total Seats</button>
 
     <div id="result"></div>
 </div>
 
 <script>
-function calculateLanding() {
-    let a = parseInt(document.getElementById("hour").value);
-    let b = parseInt(document.getElementById("minute").value);
-    let c = parseInt(document.getElementById("duration").value);
+function calculateSeats() {
+    let n = parseInt(document.getElementById("rows").value);
+    let k = parseInt(document.getElementById("first").value);
 
-    if (isNaN(a) || isNaN(b) || isNaN(c)) {
-        document.getElementById("result").innerHTML = 
+    if (isNaN(n) || isNaN(k)) {
+        document.getElementById("result").innerHTML =
             "<p class='error'>Please fill in all values!</p>";
         return;
     }
 
-    let start = a * 60 + b;
-    let landing = start + c;
-
-    let v = Math.floor(landing / 60) % 24;
-    let m = landing % 60;
+    let s = n * (k + (n - 1));
 
     document.getElementById("result").innerHTML = `
-        <p>Santa will land at:</p>
-        <h2>${v} hours : ${m} minutes</h2>
+        <p>Total number of seats:</p>
+        <h2>${s} seats</h2>
     `;
 }
 </script>
