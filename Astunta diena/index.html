@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Lights Pattern</title>
+    <!--Astunta uzduotis-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Christmas Lights Pattern</h1>
+
+    <label>Enter N (grid size):</label>
+    <input type="number" id="size" min="1" placeholder="Enter N">
+
+    <button onclick="generateGrid()">Generate Grid</button>
+
+    <pre id="result"></pre>
+</div>
+
+<script>
+function generateGrid() {
+    let N = parseInt(document.getElementById("size").value);
+
+    if (isNaN(N) || N <= 0) {
+        document.getElementById("result").textContent = "Please enter a valid number!";
+        return;
+    }
+
+    let grid = [];
+
+    // Top border
+    let border = "#".repeat(N * 2 + 3);
+    grid.push(border);
+
+    // Middle rows
+    for (let row = 1; row <= N; row++) {
+        let line = "# ";
+
+        for (let col = 1; col <= N; col++) {
+            let sum = row + col;
+
+            if (sum % 15 === 0) line += "G ";
+            else if (sum % 3 === 0) line += "T ";
+            else if (sum % 5 === 0) line += "S ";
+            else line += ". ";
+        }
+
+        line += "#";
+        grid.push(line);
+    }
+
+    // Bottom border
+    grid.push(border);
+
+    document.getElementById("result").textContent = grid.join("\n");
+}
+</script>
+
+</body>
+</html>

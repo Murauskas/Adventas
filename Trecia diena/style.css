@@ -1,0 +1,76 @@
+/* RESET – kad viskas atrodytų vienodai */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(to bottom, #fff6f6, #ffecec);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* KORTELĖ */
+.container {
+    width: 420px;
+    background: #ffffff;
+    border: 2px solid #ff3b3b;
+    border-radius: 15px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* ANTRAŠTĖ */
+h1 {
+    color: #ff2727;
+    font-size: 24px;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #ff4f4f;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ff0000;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #ff3b3b;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #ff1f1f;
+    transform: scale(1.03);
+}
+
+/* REZULTATAS */
+#result {
+    margin-top: 22px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #b00000;
+}

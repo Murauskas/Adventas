@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa’s Concert Seating</title>
+    <!--Septinta uzduotis-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Santa’s Concert Seating Plan</h1>
+
+    <label>Total Rows (n):</label>
+    <input type="number" id="rows" min="1" placeholder="number of rows">
+
+    <label>Seats in First Row (k):</label>
+    <input type="number" id="first" min="1" placeholder="seats in row 1">
+
+    <button onclick="calculateSeats()">Calculate Total Seats</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function calculateSeats() {
+    let n = parseInt(document.getElementById("rows").value);
+    let k = parseInt(document.getElementById("first").value);
+
+    if (isNaN(n) || isNaN(k)) {
+        document.getElementById("result").innerHTML =
+            "<p class='error'>Please fill in all values!</p>";
+        return;
+    }
+
+    let s = n * (k + (n - 1));
+
+    document.getElementById("result").innerHTML = `
+        <p>Total number of seats:</p>
+        <h2>${s} seats</h2>
+    `;
+}
+</script>
+
+</body>
+</html>
