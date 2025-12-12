@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Santa’s Magic Word Workshop — Anagram Groups</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <!--Dvylikta uzduotis-->
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Santa’s Magic Word Workshop</h1>
+      <p class="lead">Group together words that are anagrams (same letters, different order).</p>
+    </header>
+
+    <section class="panel">
+      <label for="inputWords">Enter words (comma, space or newline separated):</label>
+      <textarea id="inputWords" placeholder="e.g. eat tea tan ate nat bat"></textarea>
+
+      <div class="controls">
+        <label><input type="checkbox" id="sortInside" /> Sort words inside each group (A→Z)</label>
+        <label><input type="checkbox" id="sortGroups" /> Sort groups by size (largest first)</label>
+      </div>
+
+      <div class="buttons">
+        <button id="groupBtn">Group Anagrams</button>
+        <button id="clearBtn" class="alt">Clear</button>
+        <button id="exampleBtn" class="alt">Load Example</button>
+      </div>
+    </section>
+
+    <section class="panel results">
+      <h2>Groups</h2>
+      <div id="output"></div>
+      <div id="summary" class="summary"></div>
+    </section>
+
+    <footer>
+      <small>Efficient, library-free algorithm — suitable for large lists.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
