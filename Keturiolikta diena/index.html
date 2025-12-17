@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Santa’s Gift Cart Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Keturiolikta uzduotis-->
+</head>
+<body>
+
+<div class="container">
+    <h1>🎁 Santa’s Gift Cart Engine</h1>
+
+    <div class="form">
+        <input type="text" id="giftId" placeholder="Gift Name">
+        <input type="number" id="giftPrice" placeholder="Price">
+        <button onclick="addGift()">Add Gift</button>
+    </div>
+
+    <div class="form">
+        <input type="text" id="removeId" placeholder="Gift Name to remove">
+        <button onclick="removeGift()">Remove Gift</button>
+    </div>
+
+    <div class="form">
+        <input type="text" id="promoCode" placeholder="Promo code">
+        <button onclick="applyPromo()">Apply Promo</button>
+    </div>
+
+    <div class="actions">
+        <button onclick="clearCart()" class="secondary">Clear Cart</button>
+    </div>
+
+    <h2>Total: <span id="total">0</span> candy canes</h2>
+
+    <pre id="list"></pre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
