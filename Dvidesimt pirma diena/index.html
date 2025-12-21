@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christmas Library Task</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Dvidesimt pirma uzduotis-->
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 Christmas Library</h1>
+
+    <h3>Add book</h3>
+    <input id="bookTitle" placeholder="Title">
+    <input id="bookAuthor" placeholder="Author">
+    <input id="bookCopies" type="number" placeholder="Total copies">
+    <button onclick="addBook()">Add Book</button>
+
+    <h3>Register reader</h3>
+    <input id="readerName" placeholder="Reader name">
+    <input id="readerLimit" type="number" placeholder="Borrow limit">
+    <button onclick="addReader()">Add Reader</button>
+
+    <h3>Borrow book</h3>
+    <input id="borrowReaderId" type="number" placeholder="Reader ID">
+    <input id="borrowBookId" type="number" placeholder="Book ID">
+    <button onclick="borrowBook()">Borrow</button>
+
+    <h3>Return book</h3>
+    <input id="returnLoanId" type="number" placeholder="Loan ID">
+    <button onclick="returnBook()">Return</button>
+
+    <button onclick="printReport()">Print Christmas Report</button>
+
+    <pre id="output"></pre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
